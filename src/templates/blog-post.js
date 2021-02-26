@@ -41,14 +41,6 @@ class BlogPostTemplate extends React.Component {
           }
         `}
         </style>
-        <Helmet title={`${post.title} | ${siteTitle}`} />
-        <div
-          style={{
-            marginTop: rhythm(1.4),
-          }}
-        >
-          <Link to="/">← Back to Posts</Link>
-        </div>
         <h1
           style={{
             marginTop: rhythm(1),
@@ -84,33 +76,6 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio settings={author} />
-
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            listStyle: 'none',
-            padding: 0,
-          }}
-        >
-          {previous && (
-            <li>
-              <Link to={`posts/${previous.slug}`} rel="prev">
-                ← {previous.title}
-              </Link>
-            </li>
-          )}
-
-          {next && (
-            <li>
-              <Link to={`posts/${next.slug}`} rel="next">
-                {next.title} →
-              </Link>
-            </li>
-          )}
-        </ul>
       </Layout>
     )
   }
